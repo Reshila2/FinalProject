@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\PostFilter;
+use App\Filters\QueryFilter;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,8 +25,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(PostFilter $request)
     {
-        return view('home');
+        $posts = Post::filter($request)->paginate(3);
+        $categories = Category::all();
+
+        return view('mainPage.index',compact(['posts','categories']));
     }
 }

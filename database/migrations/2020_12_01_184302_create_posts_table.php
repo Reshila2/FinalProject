@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('img');
             $table->text('text');
             $table->bigInteger('cat_id')->unsigned();
+            $table->integer('price');
             $table->timestamps();
         });
     }

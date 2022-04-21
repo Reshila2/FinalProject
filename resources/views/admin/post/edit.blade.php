@@ -6,11 +6,18 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Редактировать статью: {{ $post['title'] }}</h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12 margin-tb">
+                    <div class="pull-left">
+                        <h2>Редактировать статью: {{ $post['title'] }}</h2>
+                    </div>
+                    <div class="pull-right" style="float: right">
+                        <a class="btn btn-primary" href="{{ route('post.index') }}"> Back</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
             @if (session('success'))
                 <div class="alert alert-success" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -44,15 +51,30 @@
                                         <select name="cat_id" class="form-control" required>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category['id'] }}" @if ($category['id'] == $post['cat_id']) selected
-                                            @endif>{{ $category['title'] }}
+                                            @endif>
+                                                    {{ $category['title'] }}
                                             </option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
 
+{{--                                <div class="form-group">--}}
+{{--                                    <textarea name="text" class="editor">{{ $post['text'] }}</textarea>--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <textarea name="text" value="" class="editor">{{ $post['price'] }}</textarea>--}}
+{{--                                </div>--}}
+
                                 <div class="form-group">
-                                    <textarea name="text" class="editor">{{ $post['text'] }}</textarea>
+                                    <label for="feature_image">Описание статьи</label>
+                                    <input type="text" name="text" class="form-control" id="exampleInputEmail1"
+                                           value="{{ $post['text'] }}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="feature_image">Цена статьи</label>
+                                    <input type="number" name="price" class="form-control" id="exampleInputEmail1"
+                                           value="{{ $post['price'] }}" required>
                                 </div>
 
                                 <div class="form-group">

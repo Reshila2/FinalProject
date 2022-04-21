@@ -6,11 +6,17 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Все категории</h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12 margin-tb">
+                    <div class="pull-left">
+                        <h2>Все категории</h2>
+                    </div>
+                    <div class="pull-right" style="float: right">
+                        <a class="btn btn-primary" href="{{ route('category.create') }}"> Добавить новую категорию</a>
+                    </div>
+                </div>
+            </div>
+
             @if (session('success'))
                 <div class="alert alert-success" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -29,13 +35,16 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 5%">
+                                <th style="width: 5%" >
                                     ID
                                 </th>
                                 <th>
                                     Название
                                 </th>
-                                <th style="width: 30%">
+                                <th>
+                                    Логотип
+                                </th>
+                                <th style="width: 23%">Действия
                                 </th>
                             </tr>
                         </thead>
@@ -47,6 +56,10 @@
                                     </td>
                                     <td>
                                         {{ $category['title'] }}
+                                    </td>
+                                    <td>
+                                        <img src="{{ $category['logo'] }}" alt="" class="img-uploaded"
+                                             style="display: block; width: 15vw;margin-left: 35%">
                                     </td>
 
                                     <td class="project-actions text-right">

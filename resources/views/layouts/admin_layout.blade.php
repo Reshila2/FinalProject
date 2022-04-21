@@ -27,7 +27,15 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <link href="/admin/dist/css/colorbox.css" rel="stylesheet">
 </head>
+<style>
+    table, th, td {
+        border: 1px solid;
+    }
+    th,td{
+        text-align: center;
 
+    }
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
@@ -60,7 +68,14 @@
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
+                        <li class="nav-item">
+                            <a href="{{ route('home') }}" class="nav-link">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    На сайт
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{ route('homeAdmin') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -68,27 +83,6 @@
                                     Главная
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-newspaper"></i>
-                                <p>
-                                    Блог
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{ route('post.index') }}" class="nav-link">
-                                        <p>Все статьи</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('post.create') }}" class="nav-link">
-                                        <p>Добавить статью</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -107,6 +101,27 @@
                                 <li class="nav-item">
                                     <a href="{{ route('category.create') }}" class="nav-link">
                                         <p>Добавить категорию</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-newspaper"></i>
+                                <p>
+                                    Блог
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ route('post.index') }}" class="nav-link">
+                                        <p>Все статьи</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('post.create') }}" class="nav-link">
+                                        <p>Добавить статью</p>
                                     </a>
                                 </li>
                             </ul>

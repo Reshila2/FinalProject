@@ -50,6 +50,7 @@ class PostController extends Controller
         $post->img = $request->img;
         $post->text = $request->text;
         $post->cat_id = $request->cat_id;
+        $post->price  = $request->price;
         $post->save();
 
         return redirect()->back()->withSuccess('Статья была успешно добавлена!');
@@ -63,7 +64,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+
+        return view('admin.post.show',compact('post'));
     }
 
     /**
@@ -95,6 +97,7 @@ class PostController extends Controller
         $post->img = $request->img;
         $post->text = $request->text;
         $post->cat_id = $request->cat_id;
+        $post->price = $request->price;
         $post->save();
 
         return redirect()->back()->withSuccess('Статья была успешно обновлена!');
