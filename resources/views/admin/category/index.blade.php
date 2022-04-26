@@ -58,8 +58,8 @@
                                         {{ $category['title'] }}
                                     </td>
                                     <td>
-                                        <img src="{{ $category['logo'] }}" alt="" class="img-uploaded"
-                                             style="display: block; width: 15vw;margin-left: 35%">
+                                        <img src="{{ $category['logo'] }}" alt="" class="img-uploaded"  style="display: block; width: 15vw;margin-left: 35%">
+
                                     </td>
 
                                     <td class="project-actions text-right">

@@ -24,13 +24,22 @@
                 <div class="col-lg-4">
                     <div class="card mb-3">
                         <div class="card-body">
-                            <h5 class="card-title">
-                                {{$post->title}}
-                            </h5>
-                            <img src="{{ $post['img'] }}" alt="" class="img-uploaded"
-                                 style="display: block; width: 300px">
+                            <a href="{{ url('/tour',$post->id) }}">
+                                <p class="card-title">{{$post->title}}</p>
+                                <img src="{{ $post['img'] }}" alt="" class="img-uploaded"
+                                     style="display: block; width: 300px"></a>
+                            <h3 class=" bold"> {{ $post['price'] }}</h3>
+                            <a class="bid size2 ta-center" href = "{{ url('/tour',$post->id) }}">
+                                Подробнее
+                            </a>
+                            </a>
+
+                            <a href="{{ url('/tour',$post->id) }}" class="card-title">
+                                <p class="btn-holder"><a href="{{ url('add-to-cart/'.$post->id) }}" class="btn btn-warning btn-block text-center" role="button">Заказать</a> </p>
 {{--                            <h4 class="btn btn-primary">{{$post-> category['title']}}</h4>--}}
-                            <h4 class="btn btn-primary"> от {{ $post['price']}}</h4>
+
+
+
                         </div>
                     </div>
                 </div>
